@@ -93,6 +93,7 @@ public class AddUsersView extends CustomComponent {
 				
 		
 		emailsField = new ExpandingTextArea();	
+		emailsField.setCaption("List of emails");
 		emailsField.setImmediate(true);
 		emailsField.setInputPrompt("List  of emails separated by \",\"");
 		mainLayout.addComponent(emailsField, 1, 0);
@@ -129,6 +130,7 @@ public class AddUsersView extends CustomComponent {
 		emailsField.setRequiredError("At least one mail should be introduced");
 		
 		groupNameSelect.setImmediate(true);
+		groupNameSelect.setCaption("Group membership");
 		groupNameSelect.addItem("Spring");
 		groupNameSelect.addItem("Fall");
 		groupNameSelect.addItem("Year");
@@ -167,7 +169,7 @@ public class AddUsersView extends CustomComponent {
 		groups.setImmediate(false);
 		groups.setWidth("-1px");
 		groups.setHeight("-1px");
-		groups.setValue("Group membership ");
+		groups.setValue("");
 		mainLayout.addComponent(groups, 0, 1);
 		mainLayout.setComponentAlignment(groups, new Alignment(6));
 		
@@ -180,7 +182,7 @@ public class AddUsersView extends CustomComponent {
 		emails.setImmediate(false);
 		emails.setWidth("-1px");
 		emails.setHeight("-1px");
-		emails.setValue("List of emails ");
+		emails.setValue("");
 		mainLayout.addComponent(emails, 0, 0);
 		mainLayout.setComponentAlignment(emails, new Alignment(6));
 		
