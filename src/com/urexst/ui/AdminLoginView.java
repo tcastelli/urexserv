@@ -10,6 +10,7 @@ import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Notification;
+import com.vaadin.ui.Notification.Type;
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
@@ -40,11 +41,17 @@ public class AdminLoginView  extends Panel implements View {
             public void buttonClick(ClickEvent event) {
                 Notification.show("Ok, let's pretend you're " + email);
 
+                if (email.getValue().equals("admin")&& password.getValue().equals("admin")){
+                
                 // indicate the user is logged in
                 ((URexst)UI.getCurrent()).setLoggedInUser(email.getValue());
 
                 // navigate back to the intended place
                 navigator.navigateTo(fragmentAndParameters);
+                }
+                else{
+                	Notification.show("Incorrect user or password", Type.ERROR_MESSAGE);
+                }
             }
         });
         layout.addComponent(login);
