@@ -39,7 +39,7 @@ public class AdminLoginView  extends Panel implements View {
 
         final Button login = new Button("Login", new Button.ClickListener() {
             public void buttonClick(ClickEvent event) {
-                Notification.show("Ok, let's pretend you're " + email);
+               
 
                 if (email.getValue().equals("admin")&& password.getValue().equals("admin")){
                 
