@@ -57,6 +57,38 @@ public class Student implements Serializable{
 		return password;
 	}
 
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setHousing(String housing) {
+		this.housing = housing;
+	}
+
+	public String getHousing() {
+		return housing;
+	}
+
+	public void setInbox(MessageInbox inbox) {
+		this.inbox = inbox;
+	}
+
+	public MessageInbox getInbox() {
+		return inbox;
+	}
+
+	public void setNotifications(NotificationInbox notifications) {
+		this.notifications = notifications;
+	}
+
+	public NotificationInbox getNotifications() {
+		return notifications;
+	}
+
 	
  
 	

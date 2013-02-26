@@ -18,12 +18,12 @@ public class Mail {
 
 	}
 
-	public static int sendMail(String dest,String subject, String body ){
+	public static int sendMail(String dest,String subject, String body ) throws AddressException,MessagingException,UnsupportedEncodingException{
 
 		Properties props = new Properties();
 		Session session = Session.getDefaultInstance(props, null);
 
-		try {
+		
 			Message msg = new MimeMessage(session);
 			msg.setFrom(new InternetAddress("admin@urexst.appspotmail.com", "UR exchange app system"));
 			
@@ -35,13 +35,6 @@ public class Mail {
 			Transport.send(msg);
 			return 0;
 
-		} catch (AddressException e) {
-			return -1;
-		} catch (MessagingException e) {
-			return -1;
-		} catch (UnsupportedEncodingException e) {
-			return -1;
-		}
 	}
 
 
