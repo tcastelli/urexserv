@@ -3,16 +3,21 @@ package com.urexst.model;
 import java.io.Serializable;
 import java.util.List;
 
+import com.googlecode.objectify.annotation.Entity;
+import com.googlecode.objectify.annotation.Id;
 
+@Entity
 public class Student implements Serializable{
 
+
+	private static final long serialVersionUID = 1L;
 	private String name;
 	private String surname;
-	private String email;
+	@Id private String email;
 	private String password;
 	private String country;
 	private String housing;
-	private List<Group> groupList;
+	private List<String> groupList;
 	private MessageInbox inbox; 
 	private NotificationInbox notifications;
 	
@@ -41,13 +46,6 @@ public class Student implements Serializable{
 		return email;
 	}
 
-	public void setGroupList(List<Group> groupList) {
-		this.groupList = groupList;
-	}
-
-	public List<Group> getGroupList() {
-		return groupList;
-	}
 
 	public void setPassword(String password) {
 		this.password = password;
@@ -88,6 +86,16 @@ public class Student implements Serializable{
 	public NotificationInbox getNotifications() {
 		return notifications;
 	}
+
+	public void setGroupList(List<String> groupList) {
+		this.groupList = groupList;
+	}
+
+	public List<String> getGroupList() {
+		return groupList;
+	}
+
+	
 
 	
  

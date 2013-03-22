@@ -10,8 +10,7 @@
 		<servlet-name>Urexst7 Application</servlet-name>
 		<servlet-class>com.vaadin.server.GAEVaadinServlet</servlet-class>
 		<init-param>
-			<description>
-			Vaadin UI class to use</description>
+			<description>Vaadin UI class to use</description>
 			<param-name>UI</param-name>
 			<param-value>com.urexst.URexst</param-value>
 		</init-param>
@@ -39,7 +38,7 @@
 		<servlet-class>com.google.api.server.spi.SystemServiceServlet</servlet-class>
 		<init-param>
 			<param-name>services</param-name>
-			<param-value>com.urexst.DeviceInfoEndpoint,com.urexst.MessageEndpoint</param-value>
+			<param-value/>
 		</init-param>
 	</servlet>
 	<servlet-mapping>
@@ -63,6 +62,15 @@
 			<role-name>admin</role-name>
 		</auth-constraint>
 	</security-constraint>
+	
+	<filter>
+        <filter-name>ObjectifyFilter</filter-name>
+        <filter-class>com.googlecode.objectify.ObjectifyFilter</filter-class>
+	</filter>
+	<filter-mapping>
+        <filter-name>ObjectifyFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+	</filter-mapping>
 
 
 </web-app>

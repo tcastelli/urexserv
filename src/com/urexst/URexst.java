@@ -3,7 +3,6 @@ package com.urexst;
 import com.urexst.ui.AdminLoginView;
 import com.urexst.ui.MainView;
 import com.vaadin.annotations.PreserveOnRefresh;
-import com.vaadin.annotations.Theme;
 import com.vaadin.navigator.Navigator;
 import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.server.VaadinRequest;

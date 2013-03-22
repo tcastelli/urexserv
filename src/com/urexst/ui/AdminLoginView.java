@@ -15,13 +15,15 @@ import com.vaadin.ui.Panel;
 import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
+import com.memetix.mst.language.Language;
+import com.memetix.mst.translate.Translate;
+
 
 public class AdminLoginView  extends Panel implements View {
 
     public static final String NAME = "login";
 
-    public AdminLoginView(final Navigator navigator,
-            final String fragmentAndParameters) {
+    public AdminLoginView(final Navigator navigator,  final String fragmentAndParameters) {
     	super.setSizeFull();
     	HorizontalLayout holder = new HorizontalLayout();
     	holder.setSizeFull();
@@ -38,19 +40,32 @@ public class AdminLoginView  extends Panel implements View {
         layout.setComponentAlignment(password, Alignment.MIDDLE_CENTER);
 
         final Button login = new Button("Login", new Button.ClickListener() {
-            public void buttonClick(ClickEvent event) {
-               
+
+			private static final long serialVersionUID = 1L;
+
+			public void buttonClick(ClickEvent event) {               
 
                 if (email.getValue().equals("admin")&& password.getValue().equals("admin")){
                 
                 // indicate the user is logged in
                 ((URexst)UI.getCurrent()).setLoggedInUser(email.getValue());
-
+                
                 // navigate back to the intended place
                 navigator.navigateTo(fragmentAndParameters);
                 }
                 else{
-                	Notification.show("Incorrect user or password", Type.ERROR_MESSAGE);
+                	Translate.setClientId("urexst");
+                    Translate.setClientSecret("cPFJu70lglgPwon28Vmuk7pz31Idlk81fc32NXjT9Ds=");
+
+                    try {
+						Notification.show("Incorrect user or password", Type.ERROR_MESSAGE);
+                    } catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+                	
+                	
+
                 }
             }
         });
